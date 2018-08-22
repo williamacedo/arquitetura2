@@ -1,0 +1,12 @@
+entity NewMux is
+port ( A, B, C, D: in BIT;
+		SEL0, SEL1: in BIT;
+		S : OUT BIT);
+end NewMux;
+Architecture comportamento of NewMux is
+begin 
+	S <= (NOT SEL0 AND NOT SEL1 AND A) OR
+		  (NOT SEL0 AND NOT SEL1 AND B) OR
+		  (NOT SEL0 AND NOT SEL1 AND C) OR
+		  (NOT SEL0 AND NOT SEL1 AND D);
+end comportamento;
