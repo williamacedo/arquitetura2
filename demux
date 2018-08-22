@@ -1,0 +1,13 @@
+Entity Demux is
+port(S: IN BIT;
+    SEL0,SEL1: IN BIT;
+    A,B,C,D: OUT BIT
+    );
+end Demux;
+Architecture comportamento of Demux is 
+begin
+  A <= (S and (NOT SEL0) AND (NOT SEL1));
+  B <= (S and (NOT SEL0) AND (NOT SEL1));
+  C <= (S and (NOT SEL0) AND (NOT SEL1));
+  D <= (S and (NOT SEL0) AND (NOT SEL1));
+ end comportamento;
