@@ -1,0 +1,33 @@
+a b c d s1 s2
+0 0 0 0 0  0    
+0 0 0 1 0  1
+0 0 1 0 1  0
+0 1 1 1 1  1
+
+
+0 1 0 0
+0 1 0 1
+0 1 1 0
+0 1 1 1
+1 0 0 0
+1 0 0 1
+1 0 1 0
+1 0 1 1
+1 1 0 0
+1 1 0 1
+1 1 1 0
+1 1 1 1
+ 
+Entity DeNewMux12 is
+port(S: IN BIT;
+    SEL0,SEL1: IN BIT;
+    A,B,C,D: OUT BIT
+    );
+end DeNewMux12;
+Architecture comportamento of DeNewMux12 is 
+begin
+  A <= S and ((NOT SEL0) AND (NOT SEL1));
+  B <= S and ((NOT SEL0) AND SEL1);
+  C <= S and (SEL0 AND (NOT SEL1));
+  D <= S and (SEL0 AND SEL1);
+ end comportamento;
