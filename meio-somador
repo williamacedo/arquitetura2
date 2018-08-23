@@ -1,0 +1,14 @@
+Meio somador
+https://www.embarcados.com.br/wp-content/uploads/2015/11/half-adder-7.png
+
+- Tabela:
+A B S C
+0 0 0 0
+0 1 1 0
+1 0 1 0
+1 1 0 1
+
+
+
+
+
