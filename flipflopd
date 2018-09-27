@@ -1,0 +1,22 @@
+entity ffd23 is 
+	port( CLOCK, B, C, D: IN BIT;
+			Q0: OUT BIT);
+end ffd23;
+
+architecture hardware of ffd23 is 
+SIGNAL P0, P1, P2, P3: BIT;
+
+begin
+
+P0 <= (CLOCK NAND B) NAND P1;
+P1 <= ((NOT B) NAND CLOCK) NAND P0;
+
+P2 <= (CLOCK NAND C) NAND P3;
+P3 <= ((NOT D) NAND CLOCK) NAND P2;
+
+Q0 <= P0;
+
+end hardware;
+
+
+https://allaboutfpga.com/vhdl-code-flipflop-d-t-jk-sr/
