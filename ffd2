@@ -1,0 +1,28 @@
+Library ieee;
+Use ieee.std_logic_1164.all;
+
+entity ffd23 is 
+	port( CLOCK, B, C, D: IN BIT;
+			Q0, Q1: OUT BIT);
+end ffd23;
+
+architecture hardware of ffd23 is 
+SIGNAL P0, P1, P2, P3: BIT;
+
+begin
+
+P0 <= (NOT(NOT(CLOCK AND B) AND P1));
+P1 <= (NOT((NOT(NOT B) AND CLOCK) AND P0));
+P2 <= (NOT(NOT(CLOCK AND C) AND P3));
+P3 <= (NOT((NOT(NOT D) AND CLOCK) AND P2));
+
+--P0 <= (NOT(CLOCK NAND B) NAND P1;
+--P1 <= (NOT(NOT B) AND CLOCK) AND P0;
+--P2 <= (CLOCK NAND C) NAND P3;
+--P3 <= ((NOT D) NAND CLOCK) NAND P2;
+
+
+Q0 <= P0;
+Q1 <= P3;
+
+end hardware;
