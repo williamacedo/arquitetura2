@@ -1,0 +1,19 @@
+Library ieee;
+Use ieee.std_logic_1164.all;
+
+entity ffd23 is 
+	port( CLOCK, B: IN BIT;
+			Q0: OUT BIT);
+end ffd23;
+
+architecture hardware of ffd23 is 
+SIGNAL P0, P1: BIT;
+
+begin
+
+P0 <= (NOT(NOT(CLOCK AND B) AND P1));
+P1 <= (NOT((NOT(NOT B) AND CLOCK) AND P0));
+
+Q0 <= P0;
+
+end hardware;
